@@ -3,7 +3,11 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /{document=**} {
       allow read, write: if
-          request.time < timestamp.date(2022, 11, 5);
+      request.time < timestamp.date(2022, 11, 5);
     }
   }
+}
+
+function validAccount(userEmail){
+  return userEmail.split('@')[1] == 'hlab.college';
 }

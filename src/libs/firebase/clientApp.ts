@@ -2,13 +2,13 @@ import { initializeApp, getApps } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 export const createFirebaseApp = () => {
   const clientCredentials = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+    apiKey: "AIzaSyCB3guDpHeQXk0UoHjEjuF-azRtIZl_u1s",
+    authDomain: "shingo-chijiiwa.firebaseapp.com",
+    projectId: "shingo-chijiiwa",
+    storageBucket: "shingo-chijiiwa.appspot.com",
+    messagingSenderId: "578443901125",
+    appId: "1:578443901125:web:e908ad4bcb9bba102f98ac",
+    measurementId: "G-LKYPRVMZRG",
   };
 
   if (getApps().length <= 0) {

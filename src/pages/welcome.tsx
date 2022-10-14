@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import type { NextPage } from "next";
 import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { getApp } from "firebase/app";
@@ -26,6 +26,7 @@ const Welcome: NextPage = () => {
     return (
       <div>
         <p>Signed In User: {user.email}</p>
+        <button onClick={() => signOut(auth)}>sign out</button>
       </div>
     );
   }
@@ -36,9 +37,12 @@ const Welcome: NextPage = () => {
       </Head>
       <div>
         <h1>カレッジアカウントでログイン</h1>
-        <button onClick={() => signInWithGoogle()}>Sign in with Google</button>
+        <button
+          onClick={() => signInWithGoogle(undefined, { hd: "hlab.college" })}
+        >
+          Sign in with Google
+        </button>
       </div>
-      {user ? <>user sign in</> : <>logouted</>}
     </>
   );
 };
